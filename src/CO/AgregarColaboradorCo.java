@@ -21,15 +21,15 @@ public class AgregarColaboradorCo extends HttpServlet{
 	public void doPost(HttpServletRequest request, HttpServletResponse response)  throws ServletException, IOException{
 		
 		response.setContentType("text/html");
-		colaborador.setNombre(request.getParameter("nombre"));
-		colaborador.setApellidos(request.getParameter("apellidos"));
-		colaborador.setCedula(Integer.parseInt(request.getParameter("cedula")));
-		colaborador.setCorreo(request.getParameter("correo"));
-		colaborador.setDireccion(request.getParameter("direccion"));
-		colaborador.setNivelIngles(Integer.parseInt(request.getParameter("nivelIngles")));
-		colaborador.setTelefonoCasa(Integer.parseInt(request.getParameter("telCasa")));
-		colaborador.setTelefonoCelular(Integer.parseInt(request.getParameter("telCelular")));
-		colaborador.setObservaciones(request.getParameter("observaciones"));	
+		colaborador.setNombre(request.getParameter("txtNombre"));
+		colaborador.setApellidos(request.getParameter("txtApellidos"));
+		colaborador.setCedula(Integer.parseInt(request.getParameter("txtCedula")));
+		colaborador.setCorreo(request.getParameter("txtEmail"));
+		colaborador.setDireccion(request.getParameter("txtDireccion"));
+		colaborador.setNivelIngles(Integer.parseInt(request.getParameter("txtNvlIngles")));
+		colaborador.setTelefonoCasa(Integer.parseInt(request.getParameter("txtTelCasa")));
+		colaborador.setTelefonoCelular(Integer.parseInt(request.getParameter("txtTelCel")));
+		colaborador.setObservaciones(request.getParameter("txtObservaciones"));	
 		
 	}
 

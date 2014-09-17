@@ -17,15 +17,15 @@
 <div class="cuerpo" id="cuerpo">
 <form name="opcionMenu" method="post" id="opcionMenu" action="AgregarColaboradorCo" onsubmit="return validar(this)">
 <ul>
-<li>Nombre: <input type="text" name="nombre"/></li>
-<li>Apellidos: <input type="text" name="apellidos"/></li>
-<li>Cédula: <input type="text" name="cedula"/></li>
-<li>Correo: <input type="text" name="correo"/></li>
-<li>Teléfono de casa: <input type="text" name="telCasa"/></li>
-<li>Teléfono de celular: <input type="text" name="telCelular"/></li>
-<li>Nivel de Inglés: <input type="text" name="nivelIngles"/></li>
-<li>Dirección: <input type="text" name="direccion"/></li>
-<li>Observaciones: <input type="text" name="observaciones"/></li> 
+<li>Nombre: <input type='text' name= "txtNombre" id='txtNombre'/><span id="errorNombre" class="errorStyle"></span></li>
+<li>Apellidos: <input type='text' name= "txtApellidos" id='txtApellidos'/><span id="errorApellidos" class="errorStyle"></span></li>
+<li>Cédula:<input type='text' name= "txtCedula" id='txtCedula'/><span id="errorCedula" class="errorStyle"></span></li>
+<li>Correo electrónico: <input type='text' name= "txtEmail" id='txtEmail'/><span id="errorEmail" class="errorStyle"></span></li>
+<li>Teléfono de casa: <input type='text' name= "txtTelCasa" id='txtTelCasa'/><span id="errorTelCasa" class="errorStyle"></span></li>
+<li>Teléfono de celular: <input type='text' name= "txtTelCel" id='txtTelCel'/><span id="errorTelCel" class="errorStyle"></span></li>
+<li>Nivel de Inglés: <input type='text' name= "txtNvlIngles" id='txtNvlIngles'/><span id="errorNvlIngles" class="errorStyle"></span></li>
+<li>Dirección: <input type='text' name= "txtDireccion" id='txtDireccion'/><span id="errorDireccion" class="errorStyle"></span></li>
+<li>Observaciones: <input type='text' name= "txtObservaciones" id='txtObservaciones'/><span id="errorObservaciones" class="errorStyle"></span></li>
 </ul>
 <input name="btnAgregar" type="submit" id="btnAgregar" value="Agregar" >
 </form>
