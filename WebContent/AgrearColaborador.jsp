@@ -17,15 +17,15 @@
 <div class="cuerpo" id="cuerpo">
 <form name="opcionMenu" method="post" id="opcionMenu" action="AgregarColaboradorCo" onsubmit="return validar(this)">
 <ul>
-<li>Nombre: <input type="text"/></li>
-<li>Apellidos: <input type="text"/></li>
-<li>Cédula: <input type="text"/></li>
-<li>Correo: <input type="text"/></li>
-<li>Teléfono de casa: <input type="text"/></li>
-<li>Teléfono de celular: <input type="text"/></li>
-<li>Nivel de Inglés: <input type="text"/></li>
-<li>Dirección: <input type="text"/></li>
-<li>Observaciones: <input type="text"/></li>
+<li>Nombre: <input type="text" name="nombre"/></li>
+<li>Apellidos: <input type="text" name="apellidos"/></li>
+<li>Cédula: <input type="text" name="cedula"/></li>
+<li>Correo: <input type="text" name="correo"/></li>
+<li>Teléfono de casa: <input type="text" name="telCasa"/></li>
+<li>Teléfono de celular: <input type="text" name="telCelular"/></li>
+<li>Nivel de Inglés: <input type="text" name="nivelIngles"/></li>
+<li>Dirección: <input type="text" name="direccion"/></li>
+<li>Observaciones: <input type="text" name="observaciones"/></li> 
 </ul>
 <input name="btnAgregar" type="submit" id="btnAgregar" value="Agregar" >
 </form>

@@ -4,7 +4,7 @@
 <!-- Servlets -->
 <servlet>
         <servlet-name>AgregarColaboradorCo</servlet-name>
-        <servlet-class>src.CO.AgregarColaboradorCo</servlet-class>
+        <servlet-class>CO.AgregarColaboradorCo</servlet-class>
     </servlet>
 
 <servlet-mapping>
