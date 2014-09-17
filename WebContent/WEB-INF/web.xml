@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app>
+<!-- Servlets -->
+<servlet>
+        <servlet-name>AgregarColaboradorCo</servlet-name>
+        <servlet-class>src.CO.AgregarColaboradorCo</servlet-class>
+    </servlet>
+
+<servlet-mapping>
+    <servlet-name>AgregarColaboradorCo</servlet-name>
+    <url-pattern>/AgregarColaboradorCo</url-pattern>
+</servlet-mapping>
+
+</web-app>
