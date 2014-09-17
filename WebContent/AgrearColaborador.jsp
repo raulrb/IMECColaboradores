@@ -16,20 +16,17 @@
 </div>
 <div class="cuerpo" id="cuerpo">
 <form>
-Nombre: <input type="text"/>
-
-Apellidos: <input type="text"/>
-
-Cédula: <input type="text"/>
-
-Correo: <input type="text"/>
-Teléfono de casa: <input type="text"/>
-Teléfono de celular: <input type="text"/>
-
-Nivel de Inglés: <input type="text"/>
-
-Dirección: <input type="text"/>
-Observaciones: <input type="text"/>
+<ul>
+<li>Nombre: <input type="text"/></li>
+<li>Apellidos: <input type="text"/></li>
+<li>Cédula: <input type="text"/></li>
+<li>Correo: <input type="text"/></li>
+<li>Teléfono de casa: <input type="text"/></li>
+<li>Teléfono de celular: <input type="text"/></li>
+<li>Nivel de Inglés: <input type="text"/></li>
+<li>Dirección: <input type="text"/></li>
+<li>Observaciones: <input type="text"/></li>
+</ul>
 </form>
 </div>
 </body>
