@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+.header{
+	width: 100%;
+	height: 50px;
+	background: green;
+	color:orange;
+}
+.menu{
+	width: 270px;
+	height: 500px;
+	background: blue;
+	float: left;
+}
+.cuerpo{
+	float:left;
+	width: 500px;
+	height: 500px;
+	background: gray;
+}
+a{
+	color:black;
+}
