@@ -11,11 +11,11 @@
 
 <div class="header">Agregar un nuevo colaborador</div>
 <div class="menu">
-<a href=".">Agregar nuevo colaborador</a><br/>
-<a href=".">Ver lista de colaboradores</a>
+<a href="AgregarColaborador.jsp">Agregar nuevo colaborador</a><br/>
+<a href="ListarColaboradores.jsp">Ver lista de colaboradores</a>
 </div>
 <div class="cuerpo" id="cuerpo">
-<form>
+<form name="opcionMenu" method="post" id="opcionMenu" action="AgregarColaboradorCo" onsubmit="return validar(this)">
 <ul>
 <li>Nombre: <input type="text"/></li>
 <li>Apellidos: <input type="text"/></li>
@@ -27,6 +27,7 @@
 <li>Dirección: <input type="text"/></li>
 <li>Observaciones: <input type="text"/></li>
 </ul>
+<input name="btnAgregar" type="submit" id="btnAgregar" value="Agregar" >
 </form>
 </div>
 </body>
