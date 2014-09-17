@@ -29,8 +29,7 @@ public class AgregarColaboradorCo extends HttpServlet{
 		colaborador.setNivelIngles(Integer.parseInt(request.getParameter("nivelIngles")));
 		colaborador.setTelefonoCasa(Integer.parseInt(request.getParameter("telCasa")));
 		colaborador.setTelefonoCelular(Integer.parseInt(request.getParameter("telCelular")));
-		colaborador.setObservaciones(request.getParameter("observaciones"));
-		
+		colaborador.setObservaciones(request.getParameter("observaciones"));	
 		
 	}
 
