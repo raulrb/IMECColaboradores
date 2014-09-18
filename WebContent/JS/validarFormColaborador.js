@@ -101,7 +101,7 @@
           	var esValido = true,
           	regexNum = /^[0-9]*$/;
 
-          	if (regexNum.test(pdato) == false){
+          	if (regexNum.test(pdato) === false){
           		document.getElementById(pcampo).className='errorInput';
 				document.getElementById(pspan).innerHTML='* Formato inválido';	
 				esValido = false;

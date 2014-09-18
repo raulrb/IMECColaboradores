@@ -28,11 +28,11 @@ public class AgregarColaboradorCo extends HttpServlet{
 		colaboradorBo.setApellidos(request.getParameter("txtApellidos"));
 		colaboradorBo.setCedula(Integer.parseInt(request.getParameter("txtCedula")));
 		colaboradorBo.setCorreo(request.getParameter("txtEmail"));
-		/*colaboradorBo.setDireccion(request.getParameter("txtDireccion"));
+		colaboradorBo.setDireccion(request.getParameter("txtDireccion"));
 		colaboradorBo.setNivelIngles(Integer.parseInt(request.getParameter("txtNvlIngles")));
 		colaboradorBo.setTelefonoCasa(Integer.parseInt(request.getParameter("txtTelCasa")));
 		colaboradorBo.setTelefonoCelular(Integer.parseInt(request.getParameter("txtTelCel")));
-		colaboradorBo.setObservaciones(request.getParameter("txtObservaciones"));	*/
+		colaboradorBo.setObservaciones(request.getParameter("txtObservaciones"));
 		
 		colaboradorDao.ingresarColaborador(colaboradorBo);
 		
