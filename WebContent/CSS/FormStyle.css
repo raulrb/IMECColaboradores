@@ -1,0 +1,15 @@
+@CHARSET "ISO-8859-1";
+
+
+.limpiarInput{
+	border: 1px solid #ABADB3;
+}
+
+.errorInput{
+	border: 1px solid red;
+}
+
+.errorStyle{
+	color: red;
+	font-weight: bold;
+}
