@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <web-app>
+ <welcome-file-list>
+   <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>/WebContent/AgregarColaborador.jsp</welcome-file>
+ </welcome-file-list>
 <!-- Servlets -->
 <servlet>
         <servlet-name>AgregarColaboradorCo</servlet-name>
@@ -12,6 +21,18 @@
     <url-pattern>/AgregarColaboradorCo</url-pattern>
 </servlet-mapping>
 
+
+<servlet>
+        <servlet-name>ListarColaboradoresCo</servlet-name>
+        <servlet-class>CO.ListarColaboradoresCo</servlet-class>
+    </servlet>
+
+<servlet-mapping>
+    <servlet-name>ListarColaboradoresCo</servlet-name>
+    <url-pattern>/ListarColaboradoresCo</url-pattern>
+</servlet-mapping>
+
+<!-- Recurso pooling connection -->
    <resource-ref>
       <description>DB Connection Pool</description>
       <res-ref-name>jdbc/ColaboradoresDB</res-ref-name>

@@ -101,6 +101,7 @@
         function esNumero(pdato, pspan, pcampo)  {
 
           	var esValido = true,
+<<<<<<< HEAD
           	regexNum = /^\d+/;
           	if(pdato !== ""){
           		if (regexNum.test(pdato) == false){
@@ -112,6 +113,18 @@
               		document.getElementById(pspan).innerHTML='';	
               	}
           	}          	
+=======
+          	regexNum = /^[0-9]*$/;
+
+          	if (regexNum.test(pdato) === false){
+          		document.getElementById(pcampo).className='errorInput';
+				document.getElementById(pspan).innerHTML='* Formato inválido';	
+				esValido = false;
+          	} else {
+          		document.getElementById(pcampo).className='limpiarInput';
+          		document.getElementById(pspan).innerHTML='';	
+          	}
+>>>>>>> branch 'master' of https://github.com/raulrb/IMECColaboradores.git
           	return esValido;
           }
 

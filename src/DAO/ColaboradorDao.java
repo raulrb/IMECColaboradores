@@ -1,16 +1,16 @@
 package DAO;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.sql.DataSource;
-
-import java.sql.PreparedStatement;
 
 import BO.ColaboradorBo;
 
@@ -44,14 +44,18 @@ public class ColaboradorDao {
 		// se obtiene la conexion
 		try {
 			conn = pool.getConnection();
-			stmt = conn.createStatement();
 
 			PreparedStatement pstmt = conn
-					.prepareStatement(("insert into Colaboradores (cedula, nombre, apellidos, correo) values (?, ?, ?, ?)"));
-			pstmt.setString(1, colaboradorBo.getCedula() + "");
+					.prepareStatement("insert into Colaboradores (cedula, nombre, apellidos, correo, telCasa, telCelular, nivelIngles, direccion, observaciones) values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+			pstmt.setString(1, colaboradorBo.getCedula()+"");
 			pstmt.setString(2, colaboradorBo.getNombre());
 			pstmt.setString(3, colaboradorBo.getApellidos());
 			pstmt.setString(4, colaboradorBo.getCorreo());
+			pstmt.setString(5, colaboradorBo.getTelefonoCasa()+"");
+			pstmt.setString(6, colaboradorBo.getTelefonoCelular()+"");
+			pstmt.setString(7, colaboradorBo.getNivelIngles()+"");
+			pstmt.setString(8, colaboradorBo.getDireccion());
+			pstmt.setString(9, colaboradorBo.getObservaciones());
 
 			pstmt.executeUpdate();
 
@@ -69,5 +73,77 @@ public class ColaboradorDao {
 			}
 		}
 	}
+	
+	public ArrayList<ColaboradorBo> buscarColaboradores(){
+		ArrayList<ColaboradorBo> colaboradores = new ArrayList<ColaboradorBo>();
+		ColaboradorBo colaboradorBo = null;
+		try {
+			conn = pool.getConnection();
+			stmt = conn.createStatement();
 
+			ResultSet rset = stmt.executeQuery("SELECT cedula, nombre, apellidos, correo, telCelular FROM Colaboradores");
+	         while(rset.next()) {
+	        	 colaboradorBo = new ColaboradorBo();
+	             colaboradorBo.setCedula(Integer.parseInt(rset.getString("cedula")));
+	             colaboradorBo.setNombre(rset.getString("nombre"));
+	             colaboradorBo.setApellidos(rset.getString("apellidos"));
+	             colaboradorBo.setCorreo(rset.getString("correo"));
+	             colaboradorBo.setTelefonoCelular(Integer.parseInt(rset.getString("telCelular")));
+	             colaboradores.add(colaboradorBo);	             
+	         }			
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				if (stmt != null)
+					stmt.close();
+				if (conn != null)
+					conn.close(); // return to pool
+			} catch (SQLException ex) {
+				ex.printStackTrace();
+			}
+		}
+		return colaboradores;
+	}
+
+	public ColaboradorBo buscarColaborador(int cedula){
+		ColaboradorBo colaboradorBo = null;
+		try {
+			conn = pool.getConnection();
+			stmt = conn.createStatement();
+
+			PreparedStatement pstmt = conn
+					.prepareStatement("SELECT * FROM Colaboradores c where c.cedula = ?");
+			pstmt.setString(1, cedula+"");
+			ResultSet rset = pstmt.executeQuery();
+			  while(rset.next()) {
+				 colaboradorBo = new ColaboradorBo();
+				 colaboradorBo.setCedula(Integer.parseInt(rset.getString("cedula")));
+				 colaboradorBo.setNombre(rset.getString("nombre"));
+				 colaboradorBo.setApellidos(rset.getString("apellidos"));
+				 colaboradorBo.setCorreo(rset.getString("correo"));
+				 colaboradorBo.setDireccion(rset.getString("direccion"));
+				 colaboradorBo.setNivelIngles(Integer.parseInt(rset.getString("nivelIngles")));
+				 colaboradorBo.setObservaciones(rset.getString("observaciones"));
+				 colaboradorBo.setTelefonoCasa(Integer.parseInt(rset.getString("telCasa")));
+				 colaboradorBo.setTelefonoCelular(Integer.parseInt(rset.getString("telCelular")));				 
+			  }
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				if (stmt != null)
+					stmt.close();
+				if (conn != null)
+					conn.close(); // return to pool
+			} catch (SQLException ex) {
+				ex.printStackTrace();
+			}
+		}
+		return colaboradorBo;
+	}
 }
