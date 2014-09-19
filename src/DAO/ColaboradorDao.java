@@ -46,7 +46,7 @@ public class ColaboradorDao {
 			conn = pool.getConnection();
 
 			PreparedStatement pstmt = conn
-					.prepareStatement(("insert into Colaboradores (cedula, nombre, apellidos, correo, telCasa, telCelular, nivelIngles, direccion, observaciones) values (?, ?, ?, ?, ?, ?, ?, ?, ?)"));
+					.prepareStatement("insert into Colaboradores (cedula, nombre, apellidos, correo, telCasa, telCelular, nivelIngles, direccion, observaciones) values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 			pstmt.setString(1, colaboradorBo.getCedula()+"");
 			pstmt.setString(2, colaboradorBo.getNombre());
 			pstmt.setString(3, colaboradorBo.getApellidos());
@@ -108,4 +108,42 @@ public class ColaboradorDao {
 		return colaboradores;
 	}
 
+	public ColaboradorBo buscarColaborador(int cedula){
+		ColaboradorBo colaboradorBo = null;
+		try {
+			conn = pool.getConnection();
+			stmt = conn.createStatement();
+
+			PreparedStatement pstmt = conn
+					.prepareStatement("SELECT * FROM Colaboradores c where c.cedula = ?");
+			pstmt.setString(1, cedula+"");
+			ResultSet rset = pstmt.executeQuery();
+			  while(rset.next()) {
+				 colaboradorBo = new ColaboradorBo();
+				 colaboradorBo.setCedula(Integer.parseInt(rset.getString("cedula")));
+				 colaboradorBo.setNombre(rset.getString("nombre"));
+				 colaboradorBo.setApellidos(rset.getString("apellidos"));
+				 colaboradorBo.setCorreo(rset.getString("correo"));
+				 colaboradorBo.setDireccion(rset.getString("direccion"));
+				 colaboradorBo.setNivelIngles(Integer.parseInt(rset.getString("nivelIngles")));
+				 colaboradorBo.setObservaciones(rset.getString("observaciones"));
+				 colaboradorBo.setTelefonoCasa(Integer.parseInt(rset.getString("telCasa")));
+				 colaboradorBo.setTelefonoCelular(Integer.parseInt(rset.getString("telCelular")));				 
+			  }
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				if (stmt != null)
+					stmt.close();
+				if (conn != null)
+					conn.close(); // return to pool
+			} catch (SQLException ex) {
+				ex.printStackTrace();
+			}
+		}
+		return colaboradorBo;
+	}
 }
