@@ -1,16 +1,16 @@
 	//Función para validar campos de un formulario.
 	document.getElementById('btnAgregar').onclick=function validarForm () {
 
-		var nombre, apellidos, cedula, email, telCasa, telCel, nvlIngles, datosValidos;		
+		var nombre, apellidos, cedula, email, telCasa, telCel, nvlIngles, datosValidos, cedulaValida;		
 		
 		//Almacenamiento de cada value del formulario en una variable .	
 		nombre = document.getElementById('txtNombre').value;
 		apellidos = document.getElementById('txtApellidos').value;
-	cedula = document.getElementById('txtCedula').value;
-	email = document.getElementById('txtEmail').value;
-	telCasa = document.getElementById('txtTelCasa').value;
-	telCel = document.getElementById('txtTelCel').value;
-	nvlIngles = document.getElementById('txtNvlIngles').value;
+		cedula = document.getElementById('txtCedula').value;
+		email = document.getElementById('txtEmail').value;
+		telCasa = document.getElementById('txtTelCasa').value;
+		telCel = document.getElementById('txtTelCel').value;
+		nvlIngles = document.getElementById('txtNvlIngles').value;
       	
       	// Validar nombre.
 		if (estaVacio(nombre, 'errorNombre', 'txtNombre')){
@@ -32,16 +32,18 @@
 
 		//Validar cedula.
 		if (estaVacio(cedula, 'errorCedula', 'txtCedula')){
-			datosValidos=false;	
+			datosValidos = false;	
+			cedulaValida = false;
 		}else{
 			if(esNumero(cedula, 'errorCedula', 'txtCedula')){
-				datosValidos=true;
+				datosValidos = true;
+				cedulaValida = true;
 			}
 		}	
 
 		//Validar email.
 		if (estaVacio(email, 'errorEmail', 'txtEmail')){
-			datosValidos=false;	
+			datosValidos = false;	
 		}else{
 			if(validarEmail(email, 'errorEmail', 'txtEmail')){
 				datosValidos=true;
@@ -49,21 +51,21 @@
 		}	
 
 		//Validar telefono de casa. 
-		if (esNumero(telCasa, 'errorTelCasa', 'txtTelCasa')){
+		if (esNumero(telCasa, 'errorTelCasa', 'txtTelCasa') && cedulaValida == true){
 			datosValidos=true;	
 		}else{
 			datosValidos=false;
 		}	
 
 		//Validar telefono celular.
-		if(esNumero(telCel, 'errorTelCel', 'txtTelCel')){
+		if(esNumero(telCel, 'errorTelCel', 'txtTelCel') && cedulaValida == true){
 			datosValidos=true;
 		}else{
 			datosValidos=false;
 		}	
 
 		//Validar nivel de ingles.
-		if(esNumero(nvlIngles, 'errorNvlIngles', 'txtNvlIngles')){
+		if(esNumero(nvlIngles, 'errorNvlIngles', 'txtNvlIngles') && cedulaValida == true){
 			datosValidos=true;
 		}else{
 			datosValidos=false;
@@ -99,16 +101,17 @@
         function esNumero(pdato, pspan, pcampo)  {
 
           	var esValido = true,
-          	regexNum = /^[0-9]*$/;
-
-          	if (regexNum.test(pdato) == false){
-          		document.getElementById(pcampo).className='errorInput';
-				document.getElementById(pspan).innerHTML='* Formato inválido';	
-				esValido = false;
-          	} else {
-          		document.getElementById(pcampo).className='limpiarInput';
-          		document.getElementById(pspan).innerHTML='';	
-          	}
+          	regexNum = /^\d+/;
+          	if(pdato !== ""){
+          		if (regexNum.test(pdato) == false){
+              		document.getElementById(pcampo).className='errorInput';
+    				document.getElementById(pspan).innerHTML='* Formato inválido';	
+    				esValido = false;
+              	} else {
+              		document.getElementById(pcampo).className='limpiarInput';
+              		document.getElementById(pspan).innerHTML='';	
+              	}
+          	}          	
           	return esValido;
           }
 
