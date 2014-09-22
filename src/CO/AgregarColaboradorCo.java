@@ -42,7 +42,7 @@ public class AgregarColaboradorCo extends HttpServlet{
 		colaboradorBo.setObservaciones(request.getParameter("txtObservaciones"));
 		
 		colaboradorDao.ingresarColaborador(colaboradorBo);
-		response.sendRedirect("AgregarColaborador.jsp");
+		response.sendRedirect("ListarColaboradores.jsp");
 	}
 	
 	private String esCampoNumeroVacio(String pdato){

@@ -24,7 +24,7 @@ public class ListarColaboradoresCo extends HttpServlet{
         
         public void doGet(HttpServletRequest request, HttpServletResponse response)  throws ServletException, IOException{
         int page = 0;
-        int recordsPerPage = 2;                
+        int recordsPerPage = 4;                
                         
         if(request.getParameter("page") == null){
         	page = 1;
