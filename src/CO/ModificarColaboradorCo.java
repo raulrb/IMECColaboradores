@@ -23,7 +23,6 @@ public class ModificarColaboradorCo extends HttpServlet{
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		String safd = request.getParameter("btnCedulaColaborador");
 		if(request.getParameter("btnCedulaColaborador")!= null){
 		this.colaboradorBo = colaboradorDao.buscarColaborador(Integer.parseInt(request.getParameter("btnCedulaColaborador")));
 		request.setAttribute("colaboradorModificar", colaboradorBo);
