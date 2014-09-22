@@ -32,6 +32,15 @@
     <url-pattern>/ListarColaboradoresCo</url-pattern>
 </servlet-mapping>
 
+<servlet>
+        <servlet-name>ModificarColaboradorCo</servlet-name>
+        <servlet-class>CO.ModificarColaboradorCo</servlet-class>
+    </servlet>
+
+<servlet-mapping>
+    <servlet-name>ModificarColaboradorCo</servlet-name>
+    <url-pattern>/ModificarColaboradorCo</url-pattern>
+</servlet-mapping>
 <!-- Recurso pooling connection -->
    <resource-ref>
       <description>DB Connection Pool</description>

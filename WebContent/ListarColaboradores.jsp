@@ -17,7 +17,7 @@
                  <a href="ListarColaboradores.jsp">Ver lista de colaboradores</a>
         </div>
         <div class="cuerpo">
-
+				<form name="frmCedulaColaborador" method="get" id="frmCedulaColaborador" action="ModificarColaboradorCo">
                 <table border="1" cellpadding="5" cellspacing="5">
                         <tr>
                                 <th>Cedula</th>
@@ -25,17 +25,20 @@
                                 <th>Apellidos</th>
                                 <th>Email</th>
                         </tr>
-
                         <c:forEach var="colaborador" items="${tblColaboradores}">
                                 <tr>
-                                        <td>${colaborador.cedula}</td>
+                                		
+                                        <td><input type="submit" name="btnCedulaColaborador" id="btnCedulaColaborador" value="${colaborador.cedula}" onclick="frmCedulaColaborador.submit()"/>                                        
+                                        </td>
                                         <td>${colaborador.nombre}</td>
                                         <td>${colaborador.apellidos}</td>
                                         <td>${colaborador.correo}</td>
                                         <td>${colaborador.telefonoCelular}</td>
                                 </tr>
                         </c:forEach>
+                        
                 </table>
+                </form>
 
                 <%--For displaying Previous link except for the 1st page --%>
                 <c:if test="${currentPage != 1}">

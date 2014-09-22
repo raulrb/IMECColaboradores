@@ -15,12 +15,10 @@ import DAO.ColaboradorDao;
 public class ListarColaboradoresCo extends HttpServlet{
 
         private static final long serialVersionUID = 451241225146404184L;
-        private ColaboradorBo colaboradorBo;
         private ColaboradorDao colaboradorDao;
         
         @Override
         public void init() throws ServletException{
-                this.colaboradorBo = new ColaboradorBo();
                 this.colaboradorDao = new ColaboradorDao();
         }
         

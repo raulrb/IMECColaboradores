@@ -18,7 +18,6 @@
 	</div>
 	<div class="cuerpo" id="cuerpo">
 		<form name="frmAgregarColaborador" method="post" id="frmAgregarColaborador" action="AgregarColaboradorCo" onsubmit="return validarForm()">
-<!-- 		<form name="frmAgregarColaborador" method="post" id="frmAgregarColaborador" action="AgregarColaboradorCo"> -->
 			<ul>
 				<li>Nombre: <input type='text' id='txtNombre' name='txtNombre'/><span id="errorNombre" class="errorStyle"></span></li>
 				<li>Apellidos: <input type='text' id='txtApellidos' name='txtApellidos'/><span id="errorApellidos" class="errorStyle"></span></li>
@@ -30,7 +29,7 @@
 				<li>Dirección: <input type='text' id='txtDireccion' name='txtDireccion'/><span id="errorDireccion" class="errorStyle"></span></li>
 				<li>Observaciones: <input type='text' id='txtObservaciones' name='txtObservaciones'/><span id="errorObservaciones" class="errorStyle"></span></li>
 			</ul>
-		<input name="btnAgregar" type="submit" id="btnAgregar" value="Agregar" >
+		<input name="btnAgregar" type="submit" id="btnAgregar" value="Agregar">
 		</form>
 	</div>
 	<script type="text/javascript" src="JS/validarFormColaborador.js"></script>

@@ -158,4 +158,38 @@ public class ColaboradorDao {
                 }
                 return colaboradorBo;
         }
+
+		public void actualizarColaborador(ColaboradorBo colaboradorBo) {
+			
+			try {
+				 conn = pool.getConnection();
+
+                 PreparedStatement pstmt = conn
+                                 .prepareStatement("update Colaboradores set nombre = ?, apellidos = ?, correo = ?, telCasa = ?, telCelular = ?,nivelIngles =  ?, direccion = ?, observaciones = ? where cedula = ?");
+                 pstmt.setString(1, colaboradorBo.getNombre());
+                 pstmt.setString(2, colaboradorBo.getApellidos());
+                 pstmt.setString(3, colaboradorBo.getCorreo());
+                 pstmt.setString(4, colaboradorBo.getTelefonoCasa()+"");
+                 pstmt.setString(5, colaboradorBo.getTelefonoCelular()+"");
+                 pstmt.setString(6, colaboradorBo.getNivelIngles()+"");
+                 pstmt.setString(7, colaboradorBo.getDireccion());
+                 pstmt.setString(8, colaboradorBo.getObservaciones());
+                 pstmt.setString(9, colaboradorBo.getCedula()+"");
+
+                 pstmt.executeUpdate();                                
+                
+        } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+        } finally {
+                try {
+                        if (stmt != null)
+                                stmt.close();
+                        if (conn != null)
+                                conn.close(); // return to pool
+                } catch (SQLException ex) {
+                        ex.printStackTrace();
+                }
+        }
+		}
 }
