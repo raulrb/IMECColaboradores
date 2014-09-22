@@ -156,6 +156,7 @@
 	      	} else {
 	      		document.getElementById(campo).className='limpiarInput';
 	      		document.getElementById(span).innerHTML='';	
+	      		
 	      	}
 	      	return esValido;
 	    }

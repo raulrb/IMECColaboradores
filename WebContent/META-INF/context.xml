@@ -6,7 +6,8 @@
     maxIdle: Maximum number of idle dB connections to retain in pool. Set to -1 for no limit.
     maxWait: Maximum milliseconds to wait for a dB connection to become available
              Set to -1 to wait indefinitely.
-  -->
+  --> 
+  
   <Resource name="jdbc/ColaboradoresDB" auth="Container" type="javax.sql.DataSource"
      maxActive="100" maxIdle="30" maxWait="10000" removeAbandoned="true"
      username="usuario1" password="admin" driverClassName="com.mysql.jdbc.Driver"
