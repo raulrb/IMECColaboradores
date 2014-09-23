@@ -42,18 +42,18 @@
 }
 
 a {
-	color: black;
+	color: blue;
 	text-decoration: none;
 }
 
 a:hover{
-	color: blue;
+	color: orange;
 }
 a:visited{
 	color: purple;
 }
 a:active{
-	color:orange;
+	color:red;
 }
 
 form label {
