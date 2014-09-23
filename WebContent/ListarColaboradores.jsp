@@ -24,11 +24,11 @@
 			onsubmit="return validarDelete()">
 			<table>
 				<tr>
-					<th>Cedula</th>
+					<th>Cédula</th>
 					<th>Nombre</th>
 					<th>Apellidos</th>
-					<th>Email</th>
-					<th>Telefono celular</th>
+					<th>Correo</th>
+					<th>Teléfono celular</th>
 					<th>Eliminar</th>
 				</tr>
 				<c:forEach var="colaborador" items="${tblColaboradores}">

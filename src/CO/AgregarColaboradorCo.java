@@ -35,11 +35,7 @@ public class AgregarColaboradorCo extends HttpServlet{
 		colaboradorBo.setTelefonoCasa(Integer.parseInt(esCampoNumeroVacio(pTelCasa)));
 		colaboradorBo.setTelefonoCelular(Integer.parseInt(esCampoNumeroVacio(pTelCel)));
 		colaboradorBo.setObservaciones(request.getParameter("txtObservaciones"));
-		colaboradorBo.setDireccion(request.getParameter("txtDireccion"));
-		colaboradorBo.setNivelIngles(Integer.parseInt(request.getParameter("txtNvlIngles")));
-		colaboradorBo.setTelefonoCasa(Integer.parseInt(request.getParameter("txtTelCasa")));
-		colaboradorBo.setTelefonoCelular(Integer.parseInt(request.getParameter("txtTelCel")));
-		colaboradorBo.setObservaciones(request.getParameter("txtObservaciones"));
+
 		
 		colaboradorDao.ingresarColaborador(colaboradorBo);
 		response.sendRedirect("ListarColaboradores.jsp");

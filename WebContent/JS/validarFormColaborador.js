@@ -43,13 +43,15 @@
 		}	
 
 		// Validar telefono de casa.
-		if (!estaVacio(telCasa, 'errorTelCasa', 'txtTelCasa')){
+		if (!estaVacioOpcional(telCasa)){
 			if(esNumero(telCasa, 'errorTelCasa', 'txtTelCasa')){
 				if(validarTelefono(telCasa, 'errorTelCasa', 'txtTelCasa')){
 					cantValidos++;
 				}	
-			}	
-		}
+			}
+		}else{
+			cantValidos++;
+		}	
 
 		// Validar telefono celular.
 		if (!estaVacio(telCel, 'errorTelCel', 'txtTelCel')){
@@ -91,6 +93,13 @@
           	return estaVacio;
           }
 
+        function estaVacioOpcional(pdato){
+        	var estaVacio = false;
+        	if (pdato === ''){
+        		estaVacio = true;
+        	}
+        	return estaVacio;
+        }
    		/*
 		 * FunciÃ³n para validar que el campo sea numÃ©rico. Parametros: pdato,
 		 * valor a evaluar. pspan, nombre del span donde se desplegarÃ¡ el
