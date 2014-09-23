@@ -3,7 +3,6 @@ package CO;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -45,7 +44,7 @@ public class ListarColaboradoresCo extends HttpServlet{
         public void doPost(HttpServletRequest request, HttpServletResponse response)  throws ServletException, IOException{
         	try {
 				colaboradorDao.eliminarColaboradores( request.getParameterValues("idCbx"));
-				request.getRequestDispatcher("ListarColaboradores.jsp");
+				response.sendRedirect("ListarColaboradores.jsp");
 			} catch (NumberFormatException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
